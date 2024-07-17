@@ -8,6 +8,7 @@ import (
 func main() {
 	// insert data
 	{
+		fmt.Println("===== BTreeInsertData =====")
 		root := &piscine.TreeNode{Data: "4"}
 		piscine.BTreeInsertData(root, "1")
 		piscine.BTreeInsertData(root, "7")
@@ -20,6 +21,7 @@ func main() {
 	fmt.Println()
 	// apply in order
 	{
+		fmt.Println("===== BTreeApplyInorder =====")
 		root := &piscine.TreeNode{Data: "4"}
 		piscine.BTreeInsertData(root, "1")
 		piscine.BTreeInsertData(root, "7")
@@ -29,6 +31,7 @@ func main() {
 	fmt.Println()
 	// apply pre order
 	{
+		fmt.Println("===== BTreeApplyPreorder =====")
 		root := &piscine.TreeNode{Data: "4"}
 		piscine.BTreeInsertData(root, "1")
 		piscine.BTreeInsertData(root, "7")
@@ -38,6 +41,7 @@ func main() {
 	fmt.Println()
 	// search item
 	{
+		fmt.Println("===== BTreeSearchItem =====")
 		root := &piscine.TreeNode{Data: "4"}
 		piscine.BTreeInsertData(root, "1")
 		piscine.BTreeInsertData(root, "7")
@@ -71,6 +75,7 @@ func main() {
 	fmt.Println()
 	// level count
 	{
+		fmt.Println("===== BTreeLevelCount =====")
 		root := &piscine.TreeNode{Data: "4"}
 		piscine.BTreeInsertData(root, "1")
 		piscine.BTreeInsertData(root, "7")
@@ -80,6 +85,7 @@ func main() {
 	fmt.Println()
 	// is binary
 	{
+		fmt.Println("===== BTreeIsBinary =====")
 		root := &piscine.TreeNode{Data: "4"}
 		piscine.BTreeInsertData(root, "1")
 		piscine.BTreeInsertData(root, "7")
@@ -89,6 +95,7 @@ func main() {
 	fmt.Println()
 	// apply by level
 	{
+		fmt.Println("===== BTreeApplyByLevel =====")
 		root := &piscine.TreeNode{Data: "4"}
 		piscine.BTreeInsertData(root, "3")
 		piscine.BTreeInsertData(root, "2")
@@ -96,6 +103,18 @@ func main() {
 		piscine.BTreeInsertData(root, "7")
 		piscine.BTreeInsertData(root, "5")
 		piscine.BTreeApplyByLevel(root, fmt.Println)
+	}
+	fmt.Println()
+	// btree max
+	{
+		fmt.Println("===== BTreeMax =====")
+		root := &piscine.TreeNode{Data: "4"}
+		piscine.BTreeInsertData(root, "1")
+		piscine.BTreeInsertData(root, "7")
+		piscine.BTreeInsertData(root, "5")
+		max := piscine.BTreeMax(root)
+		fmt.Println(max.Data)
+		max = piscine.BTreeMax(nil)
 	}
 	fmt.Println()
 }
