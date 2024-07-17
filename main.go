@@ -117,4 +117,16 @@ func main() {
 		max = piscine.BTreeMax(nil)
 	}
 	fmt.Println()
+	// btree min
+	{
+		fmt.Println("===== BTreeMin =====")
+		root := &piscine.TreeNode{Data: "4"}
+		piscine.BTreeInsertData(root, "1")
+		piscine.BTreeInsertData(root, "7")
+		piscine.BTreeInsertData(root, "5")
+		min := piscine.BTreeMin(root)
+		fmt.Println(min.Data)
+		min = piscine.BTreeMin(nil)
+	}
+	fmt.Println()
 }
