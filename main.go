@@ -69,6 +69,7 @@ func main() {
 		}
 	}
 	fmt.Println()
+	// level count
 	{
 		root := &piscine.TreeNode{Data: "4"}
 		piscine.BTreeInsertData(root, "1")
@@ -77,12 +78,24 @@ func main() {
 		fmt.Println(piscine.BTreeLevelCount(root))
 	}
 	fmt.Println()
+	// is binary
 	{
 		root := &piscine.TreeNode{Data: "4"}
 		piscine.BTreeInsertData(root, "1")
 		piscine.BTreeInsertData(root, "7")
 		piscine.BTreeInsertData(root, "5")
 		fmt.Println(piscine.BTreeIsBinary(root))
+	}
+	fmt.Println()
+	// apply by level
+	{
+		root := &piscine.TreeNode{Data: "4"}
+		piscine.BTreeInsertData(root, "3")
+		piscine.BTreeInsertData(root, "2")
+		piscine.BTreeInsertData(root, "1")
+		piscine.BTreeInsertData(root, "7")
+		piscine.BTreeInsertData(root, "5")
+		piscine.BTreeApplyByLevel(root, fmt.Println)
 	}
 	fmt.Println()
 }
