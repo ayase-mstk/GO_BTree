@@ -1,7 +1,7 @@
 package piscine
 
 func BTreeTransplant(root, node, rplc *TreeNode) *TreeNode {
-	if node == nil || rplc == nil {
+	if node == nil {
 		return root
 	}
 
@@ -14,7 +14,9 @@ func BTreeTransplant(root, node, rplc *TreeNode) *TreeNode {
 	}
 
 	if node.Parent != nil {
-		rplc.Parent = node.Parent
+		if rplc != nil {
+			rplc.Parent = node.Parent
+		}
 		if node.Parent.Left == node {
 			node.Parent.Left = rplc
 		} else {
