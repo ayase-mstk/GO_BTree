@@ -1,4 +1,4 @@
-package piscine
+package bst
 
 func BTreeLevelCount(root *TreeNode) int {
 	if root == nil {

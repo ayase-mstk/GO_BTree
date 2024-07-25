@@ -1,4 +1,4 @@
-package piscine
+package bst
 
 func BTreeInsertData(root *TreeNode, data string) *TreeNode {
 	if root == nil {

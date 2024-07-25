@@ -1,18 +1,18 @@
 package main
 
 import (
+	"bst"
 	"fmt"
-	"piscine"
 )
 
 func main() {
 	// insert data
 	{
 		fmt.Println("===== BTreeInsertData =====")
-		root := &piscine.TreeNode{Data: "4"}
-		piscine.BTreeInsertData(root, "1")
-		piscine.BTreeInsertData(root, "7")
-		piscine.BTreeInsertData(root, "5")
+		root := &bst.TreeNode{Data: "4"}
+		bst.BTreeInsertData(root, "1")
+		bst.BTreeInsertData(root, "7")
+		bst.BTreeInsertData(root, "5")
 		fmt.Println(root.Left.Data)
 		fmt.Println(root.Data)
 		fmt.Println(root.Right.Left.Data)
@@ -22,31 +22,31 @@ func main() {
 	// apply in order
 	{
 		fmt.Println("===== BTreeApplyInorder =====")
-		root := &piscine.TreeNode{Data: "4"}
-		piscine.BTreeInsertData(root, "1")
-		piscine.BTreeInsertData(root, "7")
-		piscine.BTreeInsertData(root, "5")
-		piscine.BTreeApplyInorder(root, fmt.Println)
+		root := &bst.TreeNode{Data: "4"}
+		bst.BTreeInsertData(root, "1")
+		bst.BTreeInsertData(root, "7")
+		bst.BTreeInsertData(root, "5")
+		bst.BTreeApplyInorder(root, fmt.Println)
 	}
 	fmt.Println()
 	// apply pre order
 	{
 		fmt.Println("===== BTreeApplyPreorder =====")
-		root := &piscine.TreeNode{Data: "4"}
-		piscine.BTreeInsertData(root, "1")
-		piscine.BTreeInsertData(root, "7")
-		piscine.BTreeInsertData(root, "5")
-		piscine.BTreeApplyPreorder(root, fmt.Println)
+		root := &bst.TreeNode{Data: "4"}
+		bst.BTreeInsertData(root, "1")
+		bst.BTreeInsertData(root, "7")
+		bst.BTreeInsertData(root, "5")
+		bst.BTreeApplyPreorder(root, fmt.Println)
 	}
 	fmt.Println()
 	// search item
 	{
 		fmt.Println("===== BTreeSearchItem =====")
-		root := &piscine.TreeNode{Data: "4"}
-		piscine.BTreeInsertData(root, "1")
-		piscine.BTreeInsertData(root, "7")
-		piscine.BTreeInsertData(root, "5")
-		selected := piscine.BTreeSearchItem(root, "7")
+		root := &bst.TreeNode{Data: "4"}
+		bst.BTreeInsertData(root, "1")
+		bst.BTreeInsertData(root, "7")
+		bst.BTreeInsertData(root, "5")
+		selected := bst.BTreeSearchItem(root, "7")
 		fmt.Print("Item selected -> ")
 		if selected != nil {
 			fmt.Println(selected.Data)
@@ -76,85 +76,85 @@ func main() {
 	// level count
 	{
 		fmt.Println("===== BTreeLevelCount =====")
-		root := &piscine.TreeNode{Data: "4"}
-		piscine.BTreeInsertData(root, "1")
-		piscine.BTreeInsertData(root, "7")
-		piscine.BTreeInsertData(root, "5")
-		fmt.Println(piscine.BTreeLevelCount(root))
+		root := &bst.TreeNode{Data: "4"}
+		bst.BTreeInsertData(root, "1")
+		bst.BTreeInsertData(root, "7")
+		bst.BTreeInsertData(root, "5")
+		fmt.Println(bst.BTreeLevelCount(root))
 	}
 	fmt.Println()
 	// is binary
 	{
 		fmt.Println("===== BTreeIsBinary =====")
-		root := &piscine.TreeNode{Data: "4"}
-		piscine.BTreeInsertData(root, "1")
-		piscine.BTreeInsertData(root, "7")
-		piscine.BTreeInsertData(root, "5")
-		fmt.Println(piscine.BTreeIsBinary(root))
+		root := &bst.TreeNode{Data: "4"}
+		bst.BTreeInsertData(root, "1")
+		bst.BTreeInsertData(root, "7")
+		bst.BTreeInsertData(root, "5")
+		fmt.Println(bst.BTreeIsBinary(root))
 	}
 	fmt.Println()
 	// apply by level
 	{
 		fmt.Println("===== BTreeApplyByLevel =====")
-		root := &piscine.TreeNode{Data: "4"}
-		piscine.BTreeInsertData(root, "3")
-		piscine.BTreeInsertData(root, "2")
-		piscine.BTreeInsertData(root, "1")
-		piscine.BTreeInsertData(root, "7")
-		piscine.BTreeInsertData(root, "5")
-		piscine.BTreeApplyByLevel(root, fmt.Println)
+		root := &bst.TreeNode{Data: "4"}
+		bst.BTreeInsertData(root, "3")
+		bst.BTreeInsertData(root, "2")
+		bst.BTreeInsertData(root, "1")
+		bst.BTreeInsertData(root, "7")
+		bst.BTreeInsertData(root, "5")
+		bst.BTreeApplyByLevel(root, fmt.Println)
 	}
 	fmt.Println()
 	// btree max
 	{
 		fmt.Println("===== BTreeMax =====")
-		root := &piscine.TreeNode{Data: "4"}
-		piscine.BTreeInsertData(root, "1")
-		piscine.BTreeInsertData(root, "7")
-		piscine.BTreeInsertData(root, "5")
-		max := piscine.BTreeMax(root)
+		root := &bst.TreeNode{Data: "4"}
+		bst.BTreeInsertData(root, "1")
+		bst.BTreeInsertData(root, "7")
+		bst.BTreeInsertData(root, "5")
+		max := bst.BTreeMax(root)
 		fmt.Println(max.Data)
-		max = piscine.BTreeMax(nil)
+		max = bst.BTreeMax(nil)
 	}
 	fmt.Println()
 	// btree min
 	{
 		fmt.Println("===== BTreeMin =====")
-		root := &piscine.TreeNode{Data: "4"}
-		piscine.BTreeInsertData(root, "1")
-		piscine.BTreeInsertData(root, "7")
-		piscine.BTreeInsertData(root, "5")
-		min := piscine.BTreeMin(root)
+		root := &bst.TreeNode{Data: "4"}
+		bst.BTreeInsertData(root, "1")
+		bst.BTreeInsertData(root, "7")
+		bst.BTreeInsertData(root, "5")
+		min := bst.BTreeMin(root)
 		fmt.Println(min.Data)
-		min = piscine.BTreeMin(nil)
+		min = bst.BTreeMin(nil)
 	}
 	fmt.Println()
 	// trans plant
 	{
 		fmt.Println("===== BTreeTransPlant =====")
-		root := &piscine.TreeNode{Data: "4"}
-		piscine.BTreeInsertData(root, "1")
-		piscine.BTreeInsertData(root, "7")
-		piscine.BTreeInsertData(root, "5")
-		node := piscine.BTreeSearchItem(root, "1")
-		replacement := &piscine.TreeNode{Data: "3"}
-		root = piscine.BTreeTransplant(root, node, replacement)
-		piscine.BTreeApplyInorder(root, fmt.Println)
+		root := &bst.TreeNode{Data: "4"}
+		bst.BTreeInsertData(root, "1")
+		bst.BTreeInsertData(root, "7")
+		bst.BTreeInsertData(root, "5")
+		node := bst.BTreeSearchItem(root, "1")
+		replacement := &bst.TreeNode{Data: "3"}
+		root = bst.BTreeTransplant(root, node, replacement)
+		bst.BTreeApplyInorder(root, fmt.Println)
 	}
 	fmt.Println()
 	// deletenode
 	{
 		fmt.Println("===== BTreeDeleteNode =====")
-		root := &piscine.TreeNode{Data: "4"}
-		piscine.BTreeInsertData(root, "1")
-		piscine.BTreeInsertData(root, "7")
-		piscine.BTreeInsertData(root, "5")
-		piscine.BTreeInsertData(root, "6")
-		node := piscine.BTreeSearchItem(root, "4")
+		root := &bst.TreeNode{Data: "4"}
+		bst.BTreeInsertData(root, "1")
+		bst.BTreeInsertData(root, "7")
+		bst.BTreeInsertData(root, "5")
+		bst.BTreeInsertData(root, "6")
+		node := bst.BTreeSearchItem(root, "4")
 		fmt.Println("Before delete:")
-		piscine.BTreeApplyInorder(root, fmt.Println)
-		root = piscine.BTreeDeleteNode(root, node)
+		bst.BTreeApplyInorder(root, fmt.Println)
+		root = bst.BTreeDeleteNode(root, node)
 		fmt.Println("After delete:")
-		piscine.BTreeApplyInorder(root, fmt.Println)
+		bst.BTreeApplyInorder(root, fmt.Println)
 	}
 }

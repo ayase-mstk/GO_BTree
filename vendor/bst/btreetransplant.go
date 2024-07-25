@@ -1,4 +1,4 @@
-package piscine
+package bst
 
 func BTreeTransplant(root, node, rplc *TreeNode) *TreeNode {
 	if node == nil {
