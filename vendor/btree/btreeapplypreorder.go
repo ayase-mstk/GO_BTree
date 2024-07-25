@@ -1,4 +1,4 @@
-package piscine
+package btree
 
 func BTreeApplyPreorder(root *TreeNode, f func(...interface{}) (int, error)) {
 	if root == nil {

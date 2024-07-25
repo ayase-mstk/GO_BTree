@@ -1,4 +1,4 @@
-package piscine
+package btree
 
 func BTreeIsBinary(root *TreeNode) bool {
 	return BTreeIsBinaryHelper(root, nil, nil)

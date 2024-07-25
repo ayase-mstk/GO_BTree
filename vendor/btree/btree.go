@@ -1,4 +1,4 @@
-package piscine
+package btree
 
 type TreeNode struct {
 	Left, Right, Parent *TreeNode

@@ -1,4 +1,4 @@
-package piscine
+package btree
 
 func BTreeDeleteNode(root, node *TreeNode) *TreeNode {
 	if root == nil {

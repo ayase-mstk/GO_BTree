@@ -1,4 +1,4 @@
-package piscine
+package btree
 
 func BTreeMin(root *TreeNode) *TreeNode {
 	if root == nil {
