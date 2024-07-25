@@ -1,4 +1,4 @@
-package btree
+package piscine
 
 // queueが使えたらもっと簡単に実装できそう。
 
