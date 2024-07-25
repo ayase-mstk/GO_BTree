@@ -1,7 +1,5 @@
 package piscine
 
-import "fmt"
-
 func BTreeDeleteNode(root, node *TreeNode) *TreeNode {
 	if root == nil {
 		return nil
@@ -12,22 +10,26 @@ func BTreeDeleteNode(root, node *TreeNode) *TreeNode {
 	}
 
 	if node.Left == nil {
-		fmt.Println("LEft node is nil")
-		BTreeTransplant(root, node, node.Right)
+		root = BTreeTransplant(root, node, node.Right)
 		return root
 	}
 	if node.Right == nil {
-		fmt.Println("Right node is nil")
-		BTreeTransplant(root, node, node.Left)
+		root = BTreeTransplant(root, node, node.Left)
 		return root
 	}
 
 	// どっちの子ノードもある場合
-	// nodeのRigtの最小のノードを抜き出して、nodeと置き換える
 	var minNode *TreeNode = BTreeMin(node.Right)
+	// nodeのRigtの最小のノードがnodeのRightでなければ、そのRightと入れ替える
+	if minNode.Parent != node {
+		root = BTreeTransplant(root, minNode, minNode.Right)
+		minNode.Right = node.Right
+		node.Left.Parent = minNode
+	}
+	// nodeのRigtの最小のノードを抜き出して、nodeと置き換える
+	root = BTreeTransplant(root, node, minNode)
 	minNode.Left = node.Left
 	node.Left.Parent = minNode
-	BTreeTransplant(root, node, minNode)
 
 	return root
 }

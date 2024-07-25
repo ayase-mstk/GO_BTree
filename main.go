@@ -149,6 +149,7 @@ func main() {
 		piscine.BTreeInsertData(root, "1")
 		piscine.BTreeInsertData(root, "7")
 		piscine.BTreeInsertData(root, "5")
+		piscine.BTreeInsertData(root, "6")
 		node := piscine.BTreeSearchItem(root, "4")
 		fmt.Println("Before delete:")
 		piscine.BTreeApplyInorder(root, fmt.Println)
